@@ -33,7 +33,7 @@ jobs:
         run:  npm add -g @slidev/cli
 
       - name: Build
-        run: npm run build -- --base /slidev-theme-hep/
+        run: npm run build -- --base /sc24paper-review/
 
       - uses: actions/configure-pages@v4
 
