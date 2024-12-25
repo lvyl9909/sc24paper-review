@@ -50,12 +50,12 @@ console.log(instituteDict);
   <div class="slidev-layout cover" :style="style">
     <div class="my-auto w-full">
         <h1 class="">{{ props.preTitle }}</h1>
-        <p class="">{{ props.meeting }}</p>
+
 
         <div v-if="authorList.length" class="">
         <p v-if="authorList.length">
           <template v-for="(author, idx) in authorList">
-            <span :class="{ 'underline': idx === 0 }">{{ author }}</span>
+            <span>{{ author }}</span>
             <sup v-if="authorsDict[author].instituteNum.length > 0">
               <template v-for="(num, index) in authorsDict[author].instituteNum">
                 <span v-if="index > 0">, </span>
@@ -66,6 +66,7 @@ console.log(instituteDict);
             <span v-if="idx === authorList.length - 2"> and </span>
           </template>
         </p>
+          <p class="">{{ props.meeting }}</p>
         <p v-if="preDate" id="date">{{ preDate }}</p>
         </div>
 
@@ -73,7 +74,7 @@ console.log(instituteDict);
 
         <FootNote
         :filled="false"
-        :separator="true"
+        :separator="false"
         x="l"
         :footnotes="instituteDict"
       />
